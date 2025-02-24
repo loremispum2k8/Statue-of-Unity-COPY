@@ -117,7 +117,7 @@ document.addEventListener('scroll',()=>{
         }
     }
 })
-
+;
 
 
 
