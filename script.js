@@ -95,6 +95,10 @@ let ilustrationTrack=0;
 let informationIllustrations = document.getElementsByClassName('jail');
 console.log(informationIllustrations);
 
+let IS = document.querySelector('.information-slider');
+//informationScroller.style.transform = 'translateY(50%)'
+
+
 document.addEventListener('scroll',()=>{
     if ((window.scrollY >= stickyDistance)&&(window.scrollY <= stickyDistance+sitckyContainer.getBoundingClientRect().height-window.innerHeight)){
         percentage = (((window.scrollY-stickyDistance)/(stickyDistance+sitckyContainer.getBoundingClientRect().height-window.innerHeight - stickyDistance))*100);
@@ -106,6 +110,10 @@ document.addEventListener('scroll',()=>{
             } else if (( i !== ilustrationTrack) && informationIllustrations[i].classList.contains('showImage')){
                 informationIllustrations[i].classList.remove('showImage');
             }
+        }
+        let ISoffet = ((percentage*IS.getBoundingClientRect().height)/100);
+        if(ISoffet < (IS.getBoundingClientRect().height-800)){
+            IS.style.transform = `translateY(-${ISoffet}px)`;
         }
     }
 })

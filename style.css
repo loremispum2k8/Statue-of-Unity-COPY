@@ -319,17 +319,16 @@ body{
 .informations-inner-container{
     display: flex;
     flex-direction: row;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    overflow: hidden;
     height: 800px;
     gap: 120px;
 }
 .information-slider{
     display: flex;
     flex-direction: column;
+    height: fit-content;
     gap: 400px;
-    height: 700px;
-    overflow: hidden;
     padding: 100px 0px 100px 0px;
 }
 .information-group{
