@@ -121,5 +121,22 @@ document.addEventListener('scroll',()=>{
 
 
 
+let open = document.getElementsByClassName('open');
+let close = document.getElementsByClassName('close');
+let popupInfo = document.getElementsByClassName('hide-info');
 
+
+
+for(let i = 0; i<2; i++){
+    open[i].addEventListener('click',()=>{
+        open[i].parentElement.nextElementSibling.classList.add('showInformationAnimation')
+        open[i].parentElement.nextElementSibling.classList.remove('hideInformationAnimation')
+    })
+}
+for(let i = 0; i<2; i++){
+    close[i].addEventListener('click',()=>{
+        close[i].parentElement.classList.add('hideInformationAnimation')
+        close[i].parentElement.classList.remove('showInformationAnimation')
+    })
+}
 
