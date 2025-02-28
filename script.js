@@ -49,8 +49,7 @@ let pastTr;
 let left = document.querySelector('.left')
 let right = document.querySelector('.right')
 
-console.log(left)
-console.log(right)
+
 
 left.addEventListener('click',(e)=>{
     if(Translation>0){
@@ -87,13 +86,11 @@ right.addEventListener('click',(e)=>{
 
 let sitckyContainer = document.querySelector('.sticky-container');
 let stickyDistance = sitckyContainer.getBoundingClientRect().top + window.scrollY;
-console.log(window.innerHeight);
 let percentage;
 
 let divider = 100/7;
 let ilustrationTrack=0;
 let informationIllustrations = document.getElementsByClassName('jail');
-console.log(informationIllustrations);
 
 let IS = document.querySelector('.information-slider');
 //informationScroller.style.transform = 'translateY(50%)'
@@ -103,7 +100,6 @@ document.addEventListener('scroll',()=>{
     if ((window.scrollY >= stickyDistance)&&(window.scrollY <= stickyDistance+sitckyContainer.getBoundingClientRect().height-window.innerHeight)){
         percentage = (((window.scrollY-stickyDistance)/(stickyDistance+sitckyContainer.getBoundingClientRect().height-window.innerHeight - stickyDistance))*100);
         ilustrationTrack = Math.trunc(percentage/divider);
-        console.log(ilustrationTrack)
         for(let i=0;i<7;i++){
             if (i === ilustrationTrack){
                 informationIllustrations[i].classList.add('showImage');
@@ -124,7 +120,36 @@ document.addEventListener('scroll',()=>{
 let open = document.getElementsByClassName('open');
 let close = document.getElementsByClassName('close');
 let popupInfo = document.getElementsByClassName('hide-info');
+let opacity;
 
+
+let stickyCreators = document.querySelector('.sitcky-creators')
+let creatorContainer = document.querySelector('.creators-container')
+
+let creatorsDistance = stickyCreators.getBoundingClientRect().top + window.scrollY;
+let stickyHeight = stickyCreators.getBoundingClientRect().height;
+let containerHeight = creatorContainer.getBoundingClientRect().height;
+let smallGapHeight = stickyHeight - containerHeight;
+let creatorPercentage;
+creatorPercentage  = 0;
+
+document.addEventListener('scroll',()=>{
+    if((window.scrollY >= creatorsDistance) && (window.scrollY <= creatorsDistance+ smallGapHeight)){
+            creatorPercentage = ((window.scrollY - creatorsDistance)/((creatorsDistance+ smallGapHeight)-creatorsDistance))
+            creatorContainer.style.opacity = `${creatorPercentage}`;
+    }
+})
+
+document.addEventListener('scroll',()=>{
+    if (window.scrollY < creatorsDistance){
+        creatorPercentage  = 0;
+        creatorContainer.style.opacity = `${creatorPercentage}`;
+    }
+    else if (window.scrollY > creatorsDistance+ smallGapHeight){
+        creatorPercentage  = 1;
+        creatorContainer.style.opacity = `${creatorPercentage}`;
+    }
+})
 
 
 for(let i = 0; i<2; i++){
