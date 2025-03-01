@@ -165,3 +165,34 @@ for(let i = 0; i<2; i++){
     })
 }
 
+
+
+let OTY = document.querySelector('.OTY-FIFTHER');
+let OTYheight = OTY.getBoundingClientRect().height;
+let OTYydistance = OTY.getBoundingClientRect().top + window.scrollY;
+let OTYpercentage;
+let auxiliar = document.querySelector('.auxiliar-container');
+let pixels = 0;
+
+
+let imagesCOntainer = document.querySelector('.OTY-IMAGES-CONTAINER')
+let width = imagesCOntainer.getBoundingClientRect().width;
+let height = imagesCOntainer.getBoundingClientRect().height;
+
+document.addEventListener('scroll',()=>{
+    if((window.scrollY >= OTYydistance) && (window.scrollY<=((OTYydistance+OTYheight)-auxiliar.getBoundingClientRect().height))){
+        OTYpercentage = (window.scrollY - OTYydistance)/((OTYydistance+OTYheight-auxiliar.getBoundingClientRect().height) - OTYydistance);
+        pixels = OTYpercentage * width;
+ 
+        console.log(pixels)
+
+        imagesCOntainer.style.transform = `translateX(-${pixels}px)`
+    }
+    if (window.scrollY <= OTYydistance){
+        pixels = 0;
+        imagesCOntainer.style.transform = `translateX(-${pixels}px)`
+    } else if (window.scrollY > (OTYydistance + OTYheight)-height){
+        pixels = width+200;
+        imagesCOntainer.style.transform = `translateX(-${pixels}px)`
+    }
+})
