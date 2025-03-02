@@ -38,7 +38,7 @@ body{
     justify-content: center;
     width: 100%;
     height: 30000px;
-    overflow-x: hidden;
+    overflow-x: scroll;
     background-color: #FBFBFB;
 }
 .nav-bar-container{
@@ -665,8 +665,9 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 200px 0px 50px 0px;
+    padding: 200px 20px 30px 20px;
     background-color: black;
+
 }
 .split-container{
     display: flex;
@@ -674,25 +675,75 @@ body{
     position: relative;
     width: 100%;
     height: 850px;
-    border:2px solid blue;
+    /*border:2px solid blue;*/
+    border-radius: 20px;
+    overflow: hidden;
 }
 .image-holder{
     overflow: hidden;
     display: flex;
     height: 100%;
-    width: 50%;
-    border: 2px solid red;
+    /*border: 2px solid red;*/
     position: absolute;
 }
-.RIGHT{
-    left: 0;
+.image-holder img{
+    position: absolute;
+    width: 100vw;
 }
 .LEFT{
+    left: 0;
+    border-right: 4px solid black;
+}
+.LEFT img{
+    top: 0;
+}
+.RIGHT{
     right: 0;
     display: flex;
     flex-direction: row;
     justify-content: end;
+    border-left: 4px solid black;
 }
+.RIGHT img{
+    bottom: 0;
+}
+.splitter{
+    width: 100%;
+    padding: 20px 0px 200px 0px;
+    background-color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.background{
+    background-color: rgb(66, 66, 66);
+    padding: 30px;
+    border-radius: 30px;
+}
+input[type=range]{
+    -webkit-appearance: none;
+    appearance: none;
+    width: 200px;
+    background-color: transparent;
+}
+input[type=range]::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    height: 25px;
+    width: 25px;
+    border-radius: 50%;
+    background-color: rgb(255, 255, 255);
+    cursor: pointer;
+    margin-top: -7px;
+
+}
+input[type=range]::-webkit-slider-runnable-track {
+    height: 10px;
+    cursor: pointer;
+    background: black;
+    border-radius: 20px;
+  }
 
 
 

@@ -196,3 +196,28 @@ document.addEventListener('scroll',()=>{
         imagesCOntainer.style.transform = `translateX(-${pixels}px)`
     }
 })
+
+
+
+
+
+
+let ranger = document.querySelector('.ranger');
+let RIGHT = document.querySelector('.RIGHT')
+let LEFT = document.querySelector('.LEFT')
+RIGHT.style.width = '50%';
+LEFT.style.width = '50%';
+
+ranger.addEventListener('input',(e)=>{
+    console.log(ranger.value);
+    if(ranger.value<50){
+        RIGHT.style.width = `${100-ranger.value}%`;
+        LEFT.style.width = `${ranger.value}%`;
+        console.log('less than 50')
+    }
+    if (ranger.value >= 50){
+        console.log('more than 50')
+        RIGHT.style.width = `${100-ranger.value}%`;
+        LEFT.style.width = `${ranger.value}%`;
+    }
+})
