@@ -25,7 +25,7 @@
     src: url(fonts/Roboto-Bold.ttf);
 }
 .universal-title{
-    font-size: clamp(0.8rem, 8vw, 3rem);;
+    font-size: 3rem;
     font-family: "RobotoBold";
 }
 a{
@@ -42,7 +42,7 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    overflow-x: hidden;
+    overflow-x: scroll;
     scroll-behavior: smooth;
     background-color: #FBFBFB;
 }
@@ -835,20 +835,30 @@ input[type=range]::-webkit-slider-runnable-track {
     border-radius: 3px;
     background: rgb(77, 77, 77);
   }
+  .slider-mobile{
+    display: none;
+  }
 
 @media screen and (max-width:1350px) {
     .sticky-container{
         display: none;
     }
+    .outer-mobile{
+        width: 100vw;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
     .mobile{
         display: flex;
         flex-direction: row;
-        width: 100vw;
-        height: min(500px, 90vw);
+        width: 85vw;
+        align-self: center;
+        justify-self: center;
+        height: min(500px, 90vh);
         overflow-x: scroll;
         overflow-y: hidden;
         gap: 200px;
-        padding: 0px 60px;
         margin-top: 100px;
         margin-bottom: 100px;
     }
@@ -983,5 +993,40 @@ input[type=range]::-webkit-slider-runnable-track {
     }
     .TTY, .outser-split-container, .splitter{
         display: none;
+    }
+}
+
+@media screen and (max-width:1050px) {
+    .universal-title{
+        font-size: 2rem;
+    }
+    .outer-slider{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width:100vw;
+    }
+    .slider-container{
+        display: none;
+    }
+    .slider-mobile{
+        display: flex;
+        flex-direction: column;
+        gap: 40px;
+        width: 85vw;
+        overflow-x: scroll;
+        padding-bottom: 30px;
+        margin-top: 100px;
+    }
+    .slider-mobile-images{
+        display: flex;
+        flex-direction: row;
+        gap: 40px;
+        height: min(500px, 90vh);
+    }
+    .slider-mobile img{
+        border-radius: 20px;
+        width: 100%;
+        object-fit: cover;
     }
 }
