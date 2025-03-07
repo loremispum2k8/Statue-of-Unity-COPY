@@ -628,7 +628,7 @@ body{
     0%{transform:translateY(0px);}
     100%{transform:translateY(300px);}
 }
-.OTY{
+.OTY, .TTY{
     width: 100vw;
     background-color: black;
     display: flex;
@@ -636,7 +636,7 @@ body{
     justify-content: center;
     padding-bottom: 40px;
 }
-.OTY h1{
+.OTY h1, .TTY h1{
     color: white;
 }
 .OTY-FIFTHER{
@@ -981,7 +981,7 @@ input[type=range]::-webkit-slider-runnable-track {
         height: 2200px;
         z-index: 500;
     }
-    .OTY-FIFTHER+.OTY, .outser-split-container, .splitter{
+    .TTY, .outser-split-container, .splitter{
         display: none;
     }
 }
