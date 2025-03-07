@@ -134,14 +134,14 @@ let creatorPercentage;
 creatorPercentage  = 0;
 
 document.addEventListener('scroll',()=>{
-    if((window.scrollY >= creatorsDistance) && (window.scrollY <= creatorsDistance+ smallGapHeight)){
+    if((window.scrollY >= creatorsDistance) && (window.scrollY <= creatorsDistance+ smallGapHeight) && (window.innerWidth >= 1350)){
             creatorPercentage = ((window.scrollY - creatorsDistance)/((creatorsDistance+ smallGapHeight)-creatorsDistance))
             creatorContainer.style.opacity = `${creatorPercentage}`;
     }
 })
 
 document.addEventListener('scroll',()=>{
-    if (window.scrollY < creatorsDistance){
+    if ((window.scrollY < creatorsDistance) && (window.innerWidth >= 1350)){
         creatorPercentage  = 0;
         creatorContainer.style.opacity = `${creatorPercentage}`;
     }

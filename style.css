@@ -50,7 +50,7 @@ body{
     z-index: 999;
     position: fixed;
     height: 61px;
-    width: min(80vw,540px);
+    width: min(60vw,540px);
     overflow: hidden;
     display: flex;
     flex-direction: row;
@@ -486,6 +486,7 @@ body{
 .sitcky-creators{
     position: relative;
     height: 3000px;
+    width: 100vw;
     background-color: black;
     z-index: 0;
 }
@@ -815,5 +816,172 @@ input[type=range]::-webkit-slider-runnable-track {
         margin-right: 0px;
         margin-left: 20px;
         align-self: flex-start;
+    }
+}
+
+.mobile{
+    display: none;
+}
+::-webkit-scrollbar{
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+}
+::-webkit-scrollbar-track {
+    background-color: rgb(240, 240, 240);
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    border-radius: 3px;
+    background: rgb(77, 77, 77);
+  }
+
+@media screen and (max-width:1350px) {
+    .sticky-container{
+        display: none;
+    }
+    .mobile{
+        display: flex;
+        flex-direction: row;
+        width: 100vw;
+        height: min(500px, 90vw);
+        overflow-x: scroll;
+        overflow-y: hidden;
+        gap: 200px;
+        padding: 0px 60px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+    .mobile .green-columns{
+        display: flex;
+        flex-direction: row;
+        height: 90%;
+        gap: 20px;
+    }
+    .mobile .green-columns .column{
+        align-self: flex-end;
+        color: white;
+        border: 1px solid white;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-between;
+        border-radius: 20px;
+        box-shadow: 0px 8px 6.6px -2px hsla(117, 87%, 32%, 0.25);
+        padding: 40px;
+    }
+    .mobile .money{
+        font-family: 'RobotoLight';
+        font-size: 1.2rem;
+    }
+    .mobile .years{
+        font-family: 'RobotoBold';
+        font-size: 1.2rem;
+    }
+    .big{
+        background:linear-gradient(#8DD67D 0%, #21AF01 100%);
+        height: 100%;
+    }
+    .small{
+        background:linear-gradient(#21AF01 0%, #008000 100%);
+        height: 35%;
+    }
+    .mobile-groups{
+        display: flex;
+        flex-direction: row;
+        justify-items: center;
+        align-items: center;
+        gap: 40px;
+    }
+    .mobile-info-groups{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        width: 450px;
+    }
+    .mobile-title{
+        font-size: 2.2rem;
+        font-family: 'RobotoSemiBold';
+    }
+    .mobile-info{
+        font-size: 1.2rem;
+        font-family: 'RobotoSemiBold';
+        color: #6E6E6E;
+        line-height: 1.7;
+    }
+    .mobile-info strong{
+        color: black;
+    }
+    .mobile-groups img{
+        border-radius: 20px;
+        object-fit: cover;
+        object-position: top;
+        width: 300px;
+        height: 90%;
+    }
+    .mobile-table{
+        border-collapse: separate;
+        border-spacing: 0;
+        width: 300px;
+        border-radius: 10px 10px 10px 10px;
+    }
+    .mobile-table tr td, .mobile-table tr th{
+        font-size: 1.2rem;
+    }
+    .mobile-table th, .mobile-table td{
+        height: 50px;
+        width: 150px;
+        text-align: center;
+        font-family: 'RobotoSemiBold';
+    }
+    .mobile-table td{
+        color: #4b4b4b;
+        border: 1px solid #BABABA;
+    }
+    .mobile-table th{
+        color: white;
+        background:linear-gradient(to top,#0B0B0B 0%, #4A4A4A 100%);
+    }
+    .mobile-table tr:first-child th:first-child{
+        border-radius: 20px 0px 0px 0px;
+    }
+    .mobile-table tr:first-child th:last-child{
+        border-radius: 0px 20px 0px 0px;
+    }
+    .mobile-table tr:last-child td:first-child{
+        border-radius: 0px 0px 0px 20px;
+    }
+    .mobile-table tr:last-child td:last-child{
+        border-radius: 0px 0px 20px 0px;
+    }
+    .mobile-table tr:nth-child(even){
+        background-color: rgb(236, 236, 236);
+    }
+    .mobile-table tr:nth-child(odd){
+        background-color: rgb(255, 255, 255);
+    }
+    .sitcky-creators{
+        position: relative;
+        height: 2200px;
+        width: 100vw;
+        background-color: black;
+        z-index: 0;
+    }
+    .creators-container{
+        display: flex;
+        top: 0;
+        width: 100%;
+        position: static;
+        flex-direction: column;
+        align-items: center;
+        background-color: black;
+        padding: 180px 20px 180px 20px;
+        gap: 120px;
+        height: 2200px;
+        z-index: 500;
+    }
+    .OTY-FIFTHER+.OTY, .outser-split-container, .splitter{
+        display: none;
     }
 }
